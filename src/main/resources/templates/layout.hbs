@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>{{#block "title"}}Online Streaming{{/block}}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Grenze&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+           font-family: 'Grenze', serif;
+           background-image:url('https://wallpaperaccess.com/full/329583.jpg');
+           background-repeat:no-repeat;
+           background-attachment:fixed;
+           background-size:cover;
+           color:white;
+        }
+        form{
+           padding-top:30px;
+           margin: 0 auto;
+           width:50%;
+           border:1px, solid, black;
+           box-shadow: 30px 30px 20px 50px inset rgba(220,220,220,0.5);
+           border-radius:10px;
+        }
+        label{
+           font-size:30px;
+           color:black;
+        }
+        .card-title{
+           font-size:20px;
+        }
+        .row{
+           padding-top:30px;
+           margin: 0 auto;
+           width:80%;
+           border:1px, solid, black;
+           box-shadow: 20px 10px 5px rgba(0,0,0,0.7); border-radius:50px;
+           background-color:rgba(255,255,255,0.7);
+           border-radius:10px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div>
+                {{#block "content"}}
+                {{/block}}
+
+            </div>
+        </div>
+    </div>
+
+{{#block "footer"}}
+</body>
+</html>
+{{/block}}
