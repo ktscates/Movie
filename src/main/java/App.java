@@ -14,32 +14,32 @@ public class App {
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 //            model.put("username", request.session().attribute("username"));
-            return new ModelAndView(model, "adminhomepage.hbs");
+            return new ModelAndView(model, "welcome.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/adminhomepage", (request, response) -> {
+        get("/welcome", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 //            model.put("username", request.session().attribute("username"));
-            return new ModelAndView(model, "adminhomepage.hbs");
+            return new ModelAndView(model, "welcome.hbs");
         }, new HandlebarsTemplateEngine());
-
-        post("/uploads", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            String picture = request.queryParams("picture");
-            String caption = request.queryParams("caption");
-            String video = request.queryParams("video");
-            Upload newUpload = new Upload(picture, caption, video);
-            newUpload.save(newUpload);
-            List<Upload> uploads = Upload.getAll();
-            model.put("uploads", Upload.getAll());
-            return new ModelAndView(model, "adminhomepage.hbs");
-        }, new HandlebarsTemplateEngine());
-
-        get("/userhomepage", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            model.put("uploads", Upload.getAll());
-//            model.put("username", request.session().attribute("username"));
-            return new ModelAndView(model, "userhomepage.hbs");
-        }, new HandlebarsTemplateEngine());
+//
+//        post("/uploads", (request, response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            String picture = request.queryParams("picture");
+//            String caption = request.queryParams("caption");
+//            String video = request.queryParams("video");
+//            Upload newUpload = new Upload(picture, caption, video);
+//            newUpload.save(newUpload);
+//            List<Upload> uploads = Upload.getAll();
+//            model.put("uploads", Upload.getAll());
+//            return new ModelAndView(model, "adminhomepage.hbs");
+//        }, new HandlebarsTemplateEngine());
+//
+//        get("/userhomepage", (request, response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            model.put("uploads", Upload.getAll());
+////            model.put("username", request.session().attribute("username"));
+//            return new ModelAndView(model, "userhomepage.hbs");
+//        }, new HandlebarsTemplateEngine());
     }
 }
